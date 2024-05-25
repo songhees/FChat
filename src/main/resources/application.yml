@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: FChat
+  profiles:
+    active: local
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+
+logging:
+  level:
+    root: INFO
+    com:
+      chatting:
+        fchat: DEBUG
+  config: classpath:logback/logback-${spring.profiles.active}.xml
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/**.xml
